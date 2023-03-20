@@ -77,7 +77,14 @@
 		arrows: false,
 		// prevArrow: '<button type="button" class="slick-prev"><i class="pe-7s-angle-left"></i></button>',
 		// nextArrow: '<button type="button" class="slick-next"><i class="pe-7s-angle-right"></i></button>',
-		responsive: [{
+		responsive: [
+			{
+				breakpoint: 1200,
+				settings: {
+					slidesToShow: 3,
+				}
+			},
+			{
 			breakpoint: 992,
 			settings: {
 				arrows: false,
@@ -92,7 +99,14 @@
 		speed: 800,
 		arrows: false,
 		slidesToShow: 4,
-		responsive: [{
+		responsive: [
+			{
+				breakpoint: 0,
+				settings: {
+					slidesToShow: 2,
+				}
+			},
+		{
 			breakpoint: 1200,
 			settings: {
 				slidesToShow: 3,
@@ -123,7 +137,14 @@
 		adaptiveHeight: true,
 		prevArrow: '<button type="button" class="slick-prev"><i class="pe-7s-angle-left"></i></button>',
 		nextArrow: '<button type="button" class="slick-next"><i class="pe-7s-angle-right"></i></button>',
-		responsive: [{
+		responsive: [
+			{
+				breakpoint: 1200,
+				settings: {
+					slidesToShow: 3,
+				}
+			},
+			{
 			breakpoint: 992,
 			settings: {
 				slidesToShow: 3
@@ -156,6 +177,12 @@
 		nextArrow: '<button type="button" class="slick-next"><i class="pe-7s-angle-right"></i></button>',
 		responsive: [
 			{
+				breakpoint: 1200,
+				settings: {
+					slidesToShow: 3,
+				}
+			},
+			{
 				breakpoint: 768,
 				settings: {
 					slidesToShow: 2,
@@ -181,7 +208,14 @@
 		arrows: false,
 		slidesToShow: 4,
 		adaptiveHeight: true,
-		responsive: [{
+		responsive: [
+			{
+				breakpoint: 1200,
+				settings: {
+					slidesToShow: 3,
+				}
+			},
+			{
 			breakpoint: 992,
 			settings: {
 				slidesToShow: 3
@@ -212,7 +246,14 @@
 			prevArrow: '<button type="button" class="slick-prev"><i class="pe-7s-angle-left"></i></button>',
 			nextArrow: '<button type="button" class="slick-next"><i class="pe-7s-angle-right"></i></button>',
 			appendArrows: $arrowContainer,
-			responsive: [{
+			responsive: [
+				{
+					breakpoint: 1200,
+					settings: {
+						slidesToShow: 3,
+					}
+				},
+				{
 				breakpoint: 992,
 				settings: {
 					slidesToShow: 2,
@@ -237,7 +278,14 @@
 		adaptiveHeight: true,
 		prevArrow: '<button type="button" class="slick-prev"><i class="pe-7s-angle-left"></i></button>',
 		nextArrow: '<button type="button" class="slick-next"><i class="pe-7s-angle-right"></i></button>',
-		responsive: [{
+		responsive: [
+			{
+				breakpoint: 1200,
+				settings: {
+					slidesToShow: 3,
+				}
+			},
+			{
 			breakpoint: 992,
 			settings: {
 				slidesToShow: 2
@@ -602,8 +650,9 @@ $('.owl-carousel').owlCarousel({
 	rtl: true,
 	nav: false,
 	responsive: {
+
 		0: {
-			items: 1,
+			items: 2,
 		},
 		750: {
 			items: 2,
