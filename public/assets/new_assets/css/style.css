@@ -1,0 +1,660 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/****************************************************  start root  **********************************************************/
+:root {
+    --static-color: #ececec;
+    --main-color: #F3AABB;
+    --second-color: #975d8d;
+    --main-font: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+/****************************************************  start root  **********************************************************/
+
+
+.myaccount-tab-menu {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+}
+
+.myaccount-tab-menu a {
+    border: 1px solid #efefef;
+    border-bottom: none;
+    color: #222222;
+    font-weight: 400;
+    font-size: 15px;
+    display: block;
+    padding: 10px 15px;
+    text-transform: capitalize;
+}
+
+.myaccount-tab-menu a:last-child {
+    border-bottom: 1px solid #efefef;
+}
+
+.myaccount-tab-menu a:hover,
+.myaccount-tab-menu a.active {
+    background-color: #975D8D;
+    border-color: #975D8D;
+    color: #fff;
+}
+
+.myaccount-tab-menu a i.fa {
+    font-size: 14px;
+    text-align: center;
+    width: 25px;
+}
+
+@media only screen and (max-width: 767.98px) {
+    #myaccountContent {
+        margin-top: 30px;
+    }
+}
+
+.myaccount-content {
+    border: 1px solid #eeeeee;
+    padding: 30px;
+}
+
+@media only screen and (max-width: 575.98px) {
+    .myaccount-content {
+        padding: 20px 15px;
+    }
+}
+
+.myaccount-content form {
+    margin-top: -20px;
+}
+
+.myaccount-content h5 {
+    border-bottom: 1px dashed #ccc;
+    padding-bottom: 10px;
+    margin-bottom: 25px;
+}
+
+.myaccount-content .welcome a {
+    color: #222222;
+}
+
+.myaccount-content .welcome a:hover {
+    color: #975D8D;
+}
+
+.myaccount-content .welcome strong {
+    font-weight: 500;
+    color: #975D8D;
+}
+
+.myaccount-content fieldset {
+    margin-top: 20px;
+}
+
+.myaccount-content fieldset legend {
+    color: #222222;
+    font-size: 20px;
+    margin-top: 20px;
+    font-weight: 400;
+    border-bottom: 1px dashed #ccc;
+}
+
+.myaccount-table {
+    white-space: nowrap;
+    font-size: 14px;
+}
+
+.myaccount-table table th,
+.myaccount-table .table th {
+    color: #222222;
+    padding: 10px;
+    font-weight: 400;
+    background-color: #f8f8f8;
+    border-color: #ccc;
+    border-bottom: 0;
+}
+
+.myaccount-table table td,
+.myaccount-table .table td {
+    padding: 10px;
+    vertical-align: middle;
+    border-color: #ccc;
+}
+
+.saved-message {
+    background-color: #f4f5f7;
+    border-top: 3px solid #975D8D;
+    border-radius: 5px 5px 0 0;
+    font-weight: 400;
+    font-size: 15px;
+    color: #555555;
+    padding: 20px;
+}
+
+/****************************************************  start header  **********************************************************/
+.buttons-dev {
+    height: unset !important;
+}
+
+.main-title-of-page {
+    color: #975d8d;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.top-head {
+    background-color: #f4f4f4;
+    justify-content: end;
+    min-height: 30px;
+    line-height: 30px;
+    font-size: 14px;
+}
+
+.top-head i {
+    color: var(--second-color);
+    margin-right: 20px;
+}
+
+.top-head input {
+    background-color: transparent;
+    border: none;
+    outline: none;
+    border-bottom: 1px solid var(--second-color);
+    width: 150px;
+    height: 30px;
+    font-size: 18px;
+    margin-left: 30px;
+}
+
+
+.top-head .login a {
+    color: var(--second-color);
+    text-decoration: none;
+    transition: ease 0.5s;
+}
+
+.top-head .login a:hover {
+    text-decoration: underline;
+}
+
+
+header {
+    background-color: var(--static-color);
+    height: 100px;
+    line-height: 100px;
+    margin-bottom: 20px;
+    padding: 0px 60px;
+    position: sticky;
+    top: -1px;
+    z-index: 111;
+}
+
+
+
+header .logo img {
+    width: 200px;
+    margin-top: -35px;
+}
+
+header .logo2 img {
+    display: none;
+    width: 250px;
+    margin-top: -60px;
+}
+
+
+header .links ul {
+    gap: 10px;
+}
+
+[lang="ar"] header .links ul {
+    flex-direction: row-reverse;
+}
+
+header .links a {
+    color: var(--second-color);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 17px;
+    transition: ease 0.5s;
+}
+
+header .links a:hover {
+    color: var(--main-color);
+    font-size: 16px;
+}
+
+header .icons i {
+    color: var(--second-color);
+    transition: ease 0.5s;
+    font-size: 22px;
+}
+
+header .icons ul {
+    gap: 10px;
+}
+
+header .icons i:hover {
+    color: var(--main-color);
+}
+
+
+header .fix-head {
+    background-color: #000000a9;
+    color: #fff;
+    border-radius: 15px;
+    height: 50px;
+    width: 80%;
+    z-index: 111;
+    bottom: 3px;
+    display: none;
+}
+
+header .fix-head ul li a {
+    color: var(--main-color);
+    transition: ease 0.5s;
+}
+
+
+header .fix-head ul li a i {
+    margin-top: 8px;
+    display: block;
+}
+
+header .fix-head ul li p {
+    margin-top: -35px;
+}
+
+header .fix-head ul li a:hover {
+    color: var(--second-color);
+}
+
+/****************************************************  end header  **********************************************************/
+
+/****************************************************  start slider  **********************************************************/
+.slider img {
+    height: 650px;
+
+}
+
+/****************************************************  end slider  **********************************************************/
+
+/****************************************************  start last-products  **********************************************************/
+.last-product h1 {
+    margin: 50px 0px 50px;
+    color: var(--second-color);
+    font-family: var(--main-font);
+    font-weight: bold;
+}
+
+.last-product .products .product {
+    width: 350px;
+    height: 350px;
+    margin: 0 auto;
+}
+
+@media (max-width:350px) {
+    .last-product .products .product {
+        width: 280px;
+    }
+}
+
+.last-product .products .product img {
+    width: 90%;
+    height: 70%;
+    border-radius: 25px;
+    margin: 0 auto;
+}
+
+.last-product .products .product h2 {
+    color: var(--main-color);
+}
+
+.last-product .products .product img {
+    transition: ease 0.5s;
+}
+
+.last-product .products .product:hover img {
+    width: 95%;
+    height: 75%;
+}
+
+/****************************************************  end last-products **********************************************************/
+
+/****************************************************  start best seller  **********************************************************/
+.best-seller h1 {
+    color: var(--second-color);
+    text-align: center;
+    margin: 50px 0px 20px;
+    font-family: var(--main-font);
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.swiper {
+    width: 100%;
+    height: 100%;
+}
+
+.swiper-slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.swiper-slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/****************************************************  end best seller  **********************************************************/
+
+/****************************************************  start banar  **********************************************************/
+.banar {
+    margin-top: 120px;
+    background-image: url(../IMAGES/Soft\ &\ Moist\ Funfetti\ Cake\ _\ Butternut\ Bakery.jpeg);
+    background-position: center;
+    background-size: cover;
+    height: 450px;
+    position: relative;
+}
+
+.banar h1 {
+    position: absolute;
+    top: 50%;
+    left: 30%;
+    transform: translate(-50, -50%);
+}
+
+.banar .overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #00000093;
+}
+
+/****************************************************  start banar  **********************************************************/
+
+/****************************************************  start services  **********************************************************/
+.services h2 {
+    color: var(--second-color);
+    margin: 100px 0px 50px;
+}
+
+.services .service {
+    padding: 10px;
+    transition: ease 0.3s;
+    color: var(--second-color);
+}
+
+/****************************************************  start services  **********************************************************/
+
+/****************************************************  start footer  **********************************************************/
+footer {
+    margin-top: 100px;
+    background-color: var(--static-color);
+    padding: 20px 0px 10px 0px;
+    color: #000;
+}
+
+footer .images img {
+    width: 60px;
+    height: 30px;
+    margin-bottom: 10px;
+    object-fit: cover;
+}
+
+footer img {
+    width: 150px;
+}
+
+footer .container div ul li a {
+    color: var(--second-color);
+    transition: ease 0.5s;
+}
+
+footer .icon li i {
+    transition: ease 0.5s;
+}
+
+footer .icon li i:hover {
+    color: var(--main-color);
+    font-size: 20px;
+}
+
+footer input {
+    background-color: transparent;
+    outline: none;
+    border: none;
+    border-bottom: 1px solid var(--second-color);
+    padding-bottom: 5px;
+    color: var(--second-color);
+}
+
+
+footer .line {
+    height: 3px;
+    background-color: var(--second-color);
+    width: 100%;
+}
+
+/****************************************************  end footer  **********************************************************/
+
+
+
+
+/****************************************************  start media-quairy  **********************************************************/
+@media (min-width : 2000px) {
+    .top-head {
+        font-size: 18px;
+    }
+
+    header {
+        height: 200px;
+        line-height: 180px;
+    }
+
+    header .links ul {
+        gap: 40px;
+    }
+
+    header .links a {
+        font-size: 25px;
+    }
+
+    header .links a:hover {
+        color: var(--main-color);
+        font-size: 25px;
+    }
+
+    header .icons i {
+        font-size: 50px;
+    }
+
+    header .icons ul {
+        gap: 20px;
+    }
+
+    header .logo img {
+        width: 400px;
+        margin-top: -80px;
+    }
+
+    .slider img {
+        height: 1200px;
+    }
+
+    footer img {
+        width: 300px;
+    }
+}
+
+@media (max-width : 992px) {
+    header .logo img {
+        width: 200px;
+        margin-top: -40px;
+    }
+
+    header .fix-head {
+        display: block;
+    }
+
+    header .links {
+        display: none;
+    }
+
+    header .logo2 img {
+        display: block;
+    }
+}
+
+@media (max-width : 768px) {
+    .banar h1 {
+        left: 20%;
+    }
+
+    footer .container div ul li a {
+        font-size: 14px;
+    }
+
+    footer img {
+        width: 100px;
+        height: 70px;
+    }
+
+}
+
+@media (max-width : 600px) {
+    header .fix-head {
+        width: 80%;
+        font-size: 12px;
+    }
+
+}
+
+@media (max-width : 978px) {
+    header .logo2 img {
+        width: 200px;
+        margin-top: -10px;
+    }
+}
+
+@media (max-width : 480px) {
+    header .logo2 img {
+        width: 175px;
+        margin-top: -10px;
+    }
+
+    header .fix-head {
+        width: 90%;
+        margin-left: -40px;
+    }
+
+    .banar h1 {
+        left: 8%;
+    }
+
+    .hero-slider-item.bg-img {
+        height: 350px !important;
+    }
+
+    .last-product h1 {
+        margin-top: 25px;
+        margin-bottom: 25px;
+    }
+
+    .top-head {
+        font-size: 18px;
+    }
+
+    header .fix-head ul li a i {
+        margin-top: 4px;
+        display: block;
+        font-size: 18px;
+    }
+
+    header .fix-head ul li p {
+        margin-top: -37px;
+    }
+
+    .best-seller h1 {
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+
+    .services h2 {
+        margin-top: 50px;
+    }
+
+    .scroll-top {
+        bottom: 70px !important;
+    }
+}
+
+.slick-dots {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 10px;
+}
+
+.slick-dots li {
+    background: #999;
+    width: 10px;
+    height: 10px;
+    font-size: 0;
+    border-radius: 5px;
+}
+
+.slick-dots li.slick-active {
+    background: #282828;
+}
+
+.add_cart {
+    color: #975d8d;
+    box-shadow: none !important;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.scroll-top {
+    bottom: 50px;
+    cursor: pointer;
+    height: 50px;
+    position: fixed;
+    right: 20px;
+    text-align: center;
+    width: 50px;
+    z-index: 9999;
+    color: #975d8d;
+    background: #fefefe;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #f0f0f0;
+    border-radius: 10px;
+    margin: 0 20px;
+    font-size: 18px;
+    font-weight: bold;
+    transition: .5s;
+}
+
+.scroll-top:hover {
+    background-color: #975d8d;
+    color: #f0f0f0;
+}
+
+.scroll-top.not-visible {
+    bottom: -50px;
+    visibility: hidden;
+    opacity: 0;
+}
+
+
+/****************************************************  end media-quairy  **********************************************************/

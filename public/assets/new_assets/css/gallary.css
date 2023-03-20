@@ -1,0 +1,48 @@
+/************************************* start gallary ***************************************/
+.gallary .hero {
+    background-image: url(../IMAGES/Oreo\ Cake\ Recipe.jpeg);
+    background-position: center;
+    background-size: cover;
+    height: 480px;
+    position: relative;
+}
+
+.gallary .overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #000000a2;
+}
+
+.gallary .hero h1 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 60px;
+}
+
+/************************************* end gallary ***************************************/
+
+/************************************* start photoes ***************************************/
+.photoes {
+    margin: 120px 0;
+}
+
+.photoes .photos div {
+    overflow: hidden;
+}
+
+.photoes .photos img {
+    width: 320px;
+    height: 380px;
+    transition: ease 0.8s;
+}
+
+.photoes .photos img:hover {
+    filter: opacity(0.5);
+    transform: scale(1.1);
+}
+
+/************************************* end photoes ***************************************/

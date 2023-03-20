@@ -1,0 +1,173 @@
+/************************************* start gallary ***************************************/
+.our-cake .hero {
+    background-image: url(../IMAGES/375cc97d-3e3a-4a97-b0d8-9117c2a37a79.jpeg);
+    background-position: center;
+    background-size: cover;
+    height: 480px;
+    position: relative;
+}
+
+.our-cake .overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #000000a2;
+}
+
+.our-cake .hero h6 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 60px;
+}
+
+/************************************* end gallary ***************************************/
+
+.sorts {
+    margin-top: 120px;
+}
+
+.sorts h1 {
+    color: var(--second-color);
+    font-family: var(--main-font);
+    font-size: 42px;
+}
+
+.sorts .photos .sort {
+    border: 2px solid var(--second-color);
+    border-radius: 20px;
+}
+
+.sorts .photos .sort:hover img {
+    opacity: 0.7;
+}
+
+.sorts .photos div {
+    width: 320px;
+    height: 380px;
+}
+
+
+.sorts .photos img {
+    margin-top: 7px;
+    width: 300px;
+    height: 70%;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    border: 2px solid var(--second-color);
+    transition: ease 0.5s;
+}
+
+.sorts .photos h4 {
+    color: var(--main-color);
+    font-family: var(--main-font);
+    margin-top: 10px;
+}
+
+
+
+/****************************************************  start opinion  **********************************************************/
+.opinion {
+    background-image: url(../IMAGES/Chocolate\ Mousse\ Mud\ Cake.jpeg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 450px;
+    padding: 10px;
+    margin-top: 120px;
+    color: #fff;
+    position: relative;
+}
+
+.opinion .overlay {
+    position: absolute;
+    width: 98%;
+    height: 95%;
+    background-color: rgba(0, 0, 0, 0.582);
+}
+
+.opinion h1 {
+    color: #fff;
+    text-align: center;
+    margin: 50px 0px 10px;
+    font-family: var(--main-font);
+    font-size: 30px;
+    font-weight: bold;
+}
+
+
+.opinion p {
+    width: 50%;
+    margin: auto;
+    font-size: 20px;
+}
+
+.swiper {
+    width: 100%;
+    height: 100%;
+}
+
+.swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.swiper-slide div {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+/************************************ end opinion-section *****************************************/
+/****************************************************  end opinion  **********************************************************/
+
+
+/************************************* start media ***************************************/
+@media (max-width:768px) {
+    .sorts .photos div {
+        width: 300px;
+    }
+
+    .sorts .photos img {
+        width: 280px;
+    }
+
+    .opinion .overlay {
+        position: absolute;
+        width: 96%;
+        height: 97%;
+        background-color: rgba(0, 0, 0, 0.582);
+    }
+
+    .opinion p {
+        font-size: 16px;
+    }
+
+    .our-cake .hero h6 {
+        font-size: 40px;
+    }
+}
+
+.add-wishlist {
+    position: absolute;
+    z-index: 9;
+    background: #fff;
+    border: 1px solid #f0f0f0;
+    padding: 10px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    top: 15px;
+    right: 20px;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+/************************************* end media ***************************************/
