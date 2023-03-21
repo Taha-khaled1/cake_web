@@ -143,7 +143,7 @@
 
 
         </div>
-        <!-- end page content -->
+      
     </div>
     <!-- end page-wrapper -->
 
@@ -227,4 +227,4 @@ $('.deletem_b').on("click", function (e) {
     });
  
  </script>
-@endpush
+@endpush  <!-- end page content -->
