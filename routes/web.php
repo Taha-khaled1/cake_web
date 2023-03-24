@@ -369,6 +369,8 @@ Route::prefix("admin")->group(function () {
  Route::get('order/shipping/{id}' , [App\Http\Controllers\Admin\OrderController::class , 'shipping'])->name('admin.order.shipping');
  Route::get('order/cancel/{id}' , [App\Http\Controllers\Admin\OrderController::class , 'cancel'])->name('admin.order.cancel');
  Route::get('sh/orders/list' , [App\Http\Controllers\Admin\OrderController::class , 'sh_orders_list'])->name('sh.admin.orders');
+ Route::get('orderss.list' , [App\Http\Controllers\Admin\OrderController::class , 'orderss_list'])->name('orderss.list');
+ Route::get('shs.admin.orders' , [App\Http\Controllers\Admin\OrderController::class , 'shs_orders_list'])->name('shs.admin.orders');
   Route::post('order/delete' , [App\Http\Controllers\Admin\OrderController::class , 'order_delete'])->name('admin.order.delete');
   Route::get('sorders/list' , [App\Http\Controllers\Admin\OrderController::class , 'sorders_list'])->name('admin.sorders');
   Route::get('sorder/profile/{id}' , [App\Http\Controllers\Admin\OrderController::class , 'sorder_profile'])->name('admin.sorder.profile');

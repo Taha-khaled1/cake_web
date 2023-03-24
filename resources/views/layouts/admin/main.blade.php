@@ -9,7 +9,51 @@
     @notifyCss
 
     <!-- plugin css file  -->
-    
+    <style>.button-container {
+        display: flex;
+        gap: 10px;
+      }
+      .dropdown-menu {
+  background-color: #000;
+}
+.dropdown-toggle {
+  background-color: white;
+  color: black;
+}
+      .button {
+        border: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+        font-size: 16px;
+        cursor: pointer;
+        transition: all 0.2s ease-in-out;
+      }
+      
+      .primary {
+        background-color: #4CAF50;
+        color: white;
+      }
+      
+      .secondary {
+        background-color: #008CBA;
+        color: white;
+      }
+      
+      .tertiary {
+        background-color: #f44336;
+        color: white;
+      }
+      
+      .button:hover {
+        transform: translateY(-2px);
+        box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+      }
+      
+      .button:active {
+        transform: translateY(0px);
+        box-shadow: none;
+      }
+      </style>
     <link rel="stylesheet" href="{{ url('/') }}/cp/assets/plugin/datatables/responsive.dataTables.min.css">
     <link rel="stylesheet" href="{{ url('/') }}/cp/assets/plugin/datatables/dataTables.bootstrap5.min.css">
 
