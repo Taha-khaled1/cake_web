@@ -24,13 +24,50 @@ class HomeController extends Controller
         $prductsem = Product::where('quantity',0.00)->get()->count();
         $users = User::get()->count();
 
+
+        $startDate = Carbon::now()->startOfMonth()->subMonths(6);
+        $endDate = Carbon::now()->endOfMonth();
+        $data = User::whereBetween('created_at', [$startDate, $endDate])
+            ->groupBy('year', 'month', 'monthName')
+            ->selectRaw('year(created_at) as year, month(created_at) as month, count(*) as total, DATE_FORMAT(created_at, "%M") as monthName')
+            ->orderBy('year', 'desc')
+            ->orderBy('month', 'desc')
+            ->take(6)
+            ->get();
+    
+        $labels = $data->pluck('monthName')->toArray();
+    
+        $datasets = [
+            [
+                "label" => "احسائية لاخر المستخدمين",
+                'backgroundColor' => "rgba(38, 185, 154, 0.31)",
+                'borderColor' => "rgba(38, 185, 154, 0.7)",
+                "pointBorderColor" => "rgba(38, 185, 154, 0.7)",
+                "pointBackgroundColor" => "rgba(38, 185, 154, 0.7)",
+                "pointHoverBackgroundColor" => "#fff",
+                "pointHoverBorderColor" => "rgba(220,220,220,1)",
+                'data' => $data->pluck('total'),
+            ]
+        ];
+    
+        $chartjs = app()->chartjs
+            ->name('userStatistics')
+            ->type('line')
+            ->size(['width' => 200, 'height' => 100])
+            ->labels($labels)
+            ->datasets($datasets)
+            ->options([]);
+
+
+
         return view('admin.home.index', [
             'orders' => $orders,       
             'orderstoday' => $orderstoday,       
             'orderssh' => $orderssh,       
             'prducts' => $prducts,       
             'users' => $users,
-            'prductsem' => $prductsem,       
+            'prductsem' => $prductsem,     
+            'chartjs'=>$chartjs,  
         ]);
     }
     public function contact(){

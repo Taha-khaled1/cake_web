@@ -80,6 +80,17 @@
                                                 </div>
                                             </div>
                                         </div> 
+
+
+                                        <br>
+                                        <br>
+
+                                        <div style="width: 100%; height:  50%; margin: 0 auto; text-align: center; direction: rtl;">
+                                            {!! $chartjs->render() !!}
+                                        </div>
+
+
+
                                     </div> <!-- row end -->
 @endsection
 

@@ -12,7 +12,7 @@ use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 use App\Http\Controllers\Site\PaymentsController;
 use App\Models\Order;
 use App\Models\OrderAddress;
-
+use App\Models\User;
 use Carbon\Carbon;
 /*
 |--------------------------------------------------------------------------
@@ -54,6 +54,25 @@ Route::get('/print{id}', function($id) {
   
 // return what you want
 })->name('print');
+
+
+
+
+Route::post('/update.userl/{id}/{status}', function($id, $status) {
+    $user = User::find($id);
+
+    echo '------------------------------------------------------------------------------';
+    echo $status; 
+    echo $id; 
+    echo '------------------------------------------------------------------------------';
+    $user->is_admin = $status;
+    $user->save();
+
+    return redirect()->route('admin.home');
+})->name('update.userl');
+
+
+
 
 
 
@@ -108,7 +127,7 @@ Route::get('/report.report', function() {
 
     $datasets = [
         [
-            "label" => "Total Orders",
+            "label" => "مجموع الطلبيات لهذه الشهر",
             'backgroundColor' => "rgba(38, 185, 154, 0.31)",
             'borderColor' => "rgba(38, 185, 154, 0.7)",
             "pointBorderColor" => "rgba(38, 185, 154, 0.7)",
@@ -147,7 +166,7 @@ Route::get('/report.total', function() {
     $labels = $data->pluck('monthName')->toArray();
     $datasets = [       
          [
-        'label' => 'Total Amount',
+            'label' => 'مجموع الاموال  لهذه الشهر',
          'backgroundColor' => 'rgba(38, 185, 154, 0.31)',
          'borderColor' => 'rgba(38, 185, 154, 0.7)',
          'pointBorderColor' => 'rgba(38, 185, 154, 0.7)',
@@ -169,6 +188,7 @@ Route::get('/report.total', function() {
     return view('charts2', compact('chartjs'));
 
 })->name('total');
+
 
 
 

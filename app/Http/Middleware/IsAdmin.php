@@ -18,7 +18,7 @@ class IsAdmin
 
     {
 
-        if(auth()->user()->is_admin == 1){
+        if(auth()->user()->is_admin == 1 || auth()->user()->is_admin == 2||auth()->user()->is_admin == 3){
 
             return $next($request);
 
