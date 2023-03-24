@@ -112,127 +112,67 @@
                             </div><!--end card-body-->
 
 
-                            <div class="card-body">
-                            <ul class="nav nav-tabs" role="tablist">
-                                    <li class="nav-item">
-                                        <a class="nav-link active" data-bs-toggle="tab" href="#Post" role="tab"
-                                           aria-selected="true">المنتجات</a>
-                                    </li>
-                                    
-                                    <li class="nav-item">
-                                        <a class="nav-link" data-bs-toggle="tab" href="#Settings" role="tab"
-                                           aria-selected="false">العنوان / ملاحظات</a>
-                                    </li>
-                                </ul>
-
-                            <div class="tab-content">
-                              <div class="tab-pane p-3 active" id="Post" role="tabpanel">
-                                <div class="table-responsive">
-                                 <table id="example" class="table table-striped table-bordered" style="width:90%;">
+                            <div class="container">
+                                <h2 class="order-title">{{$order->title}}</h2>
+                                <div class="order-details">
+                                  <table id="example" class="table table-striped table-bordered">
                                     <thead>
-                                    <tr>
+                                      <tr>
                                         <th>#</th>
                                         <th>اسم المنتج</th>
-                                        <th>صورة المنتج</th> 
+                                        <th>صورة المنتج</th>
                                         <th>كمية المنتج</th>
                                         <th>السعر</th>
                                         <th>الاجمالي</th>
-                                        <th>الحجم </th>
-                                        <th>ملاحظات مع الطلب </th>
-                                        
-                                 
-                                    </tr>
+                                        <th>الحجم</th>
+                                        <th>ملاحظات مع الطلب</th>
+                                      </tr>
                                     </thead>
                                     <tbody>
-                                    @foreach($order->items as $item)
-                                    <tr  >
-                                        <td>{{$loop->iteration}} </td>
-                                        <td>{{$item->product_name}} </td> 
+                                      @foreach($order->items as $item)
+                                      <tr>
+                                        <td>{{$loop->iteration}}</td>
+                                        <td>{{$item->product_name}}</td>
                                         <td>
-                                        @if($item->product->image)
-                                        <img src="{{asset('/storage/property/'.$item->product->image)}}"   alt="{{$item->product->image}}" width="100">
-                                        @endif 
+                                          @if($item->product->image)
+                                          <img src="{{asset('/storage/property/'.$item->product->image)}}" alt="{{$item->product->image}}" width="100">
+                                          @endif
                                         </td>
-                                        <td>{{$item->quantity}} </td>
+                                        <td>{{$item->quantity}}</td>
                                         <td>{{$item->product->price}}</td>
-                                        <td>{{$item->product->price * $item->quantity}} </td>
-                                        <td>  {{$item->options}}  </td>
-                                        <td>  {{$item->notes}}  </td>
-                                         
-                                        </tr>
-                                        @endforeach
+                                        <td>{{$item->product->price * $item->quantity}}</td>
+                                        <td>{{$item->options}}</td>
+                                        <td>{{$item->notes}}</td>
+                                      </tr>
+                                      @endforeach
                                     </tbody>
-                                 </table>
-                               
-                                 </div>
-                                 </div>
-                                 <div class="tab-pane p-3" id="Settings" role="tabpanel">
-                                        <div class="row">
-                                        <div class="card">
-                                         
-                                        <div class="form-group mb-6 row">
-                                                <label class="col-xl-1 col-lg-1 mb-lg-0 form-label">الاسم  </label>
-                                                <div class="col-lg-9 col-xl-8">
-                                                <label  > {{$address->name}} </label>
-
-                                                </div>
-                                            </div> 
-                                            <div class="form-group mb-6 row">
-                                                <label class="col-xl-1 col-lg-1 mb-lg-0 form-label">الايميل   </label>
-                                                <div class="col-lg-9 col-xl-8">
-                                                <label  > {{$address->email}} </label>
-
-                                                </div>
-                                            </div> 
-                                            <div class="form-group mb-6 row">
-                                                <label class="col-xl-1 col-lg-1 mb-lg-0 form-label">المنطقة  </label>
-                                                <div class="col-lg-9 col-xl-8">
-                                                <label  > {{$address->area}} </label>
-
-                                                </div>
-                                            </div> 
-                                            <div class="form-group mb-6 row">
-                                                <label class="col-xl-1 col-lg-1 mb-lg-0 form-label">الشارع  </label>
-                                                <div class="col-lg-9 col-xl-8">
-                                                <label  > {{$address->street}} </label>
-
-                                                </div>
-                                            </div> 
-                                            <div class="form-group mb-6 row">
-                                                <label class="col-xl-1 col-lg-1 mb-lg-0 form-label">الجادة  </label>
-                                                <div class="col-lg-9 col-xl-8">
-                                                <label  > {{$address->Blvd}} </label>
-
-                                                </div>
-                                            </div> 
-                                            <div class="form-group mb-6 row">
-                                                <label class="col-xl-2 col-lg-2 mb-lg-0 form-label">الشقة\المنزل  </label>
-                                                <div class="col-lg-9 col-xl-8">
-                                                <label  > {{$address->house}} </label>
-
-                                                </div>
-                                            </div> 
-                                            <div class="form-group mb-6 row">
-                                                <label class="col-xl-1 col-lg-1 mb-lg-0 form-label">رقم الهاتف  </label>
-                                                <div class="col-lg-9 col-xl-8">
-                                                <label  > {{$address->phone}} </label>
-
-                                                </div>
-                                            </div> 
-                                            @if($order->nots)<hr>
-                                 <div class="form-group mb-6 row">
-                                                <label class="col-xl-1 col-lg-1 mb-lg-0 form-label">ملاحظات  </label>
-                                                <div class="col-lg-9 col-xl-8">
-                                                <label  > {{$order->nots}} </label>
-
-                                                </div>
-                                            </div> @endif
-                                            </div>
-
-                                            </div><!--end col-->
-                                        </div><!--end row-->
-                                    </div>
+                                  </table>
                                 </div>
+                                <div class="order-address">
+                                  <h4 class="address-title">العنوان / ملاحظات</h4>
+                                  <div class="row">
+                                    <div class="col-md-6">
+                                      <p><strong>الاسم: </strong>{{$address->name}}</p>
+                                      <p><strong>الايميل: </strong>{{$address->email}}</p>
+                                      <p><strong>المنطقة: </strong>{{$address->area}}</p>
+                                      <p><strong>الشارع: </strong>{{$address->street}}</p>
+                                    </div>
+                                    <div class="col-md-6">
+                                      <p><strong>الجادة: </strong>{{$address->Blvd}}</p>
+                                      <p><strong>الشقة\المنزل: </strong>{{$address->house}}</p>
+                                      <p><strong>رقم الهاتف: </strong>{{$address->phone}}</p>
+                                      @if($order->nots)
+                                      <hr>
+                                      <p><strong>ملاحظات: </strong>{{$order->nots}}</p>
+                                      @endif
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                              
+
+
+
                             </div>
                         </div>
                     </div> <!-- end col -->

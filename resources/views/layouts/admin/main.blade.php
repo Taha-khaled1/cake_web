@@ -9,7 +9,51 @@
     @notifyCss
 
     <!-- plugin css file  -->
-    <style>.button-container {
+    <style>
+    
+    
+    
+    
+    .container {
+  margin: 20px auto;
+  padding: 20px;
+  max-width: 900px;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.order-title {
+  text-align: center;
+  font-size: 24px;
+  margin-bottom: 30px;
+}
+
+.order-details,
+.order-address {
+  margin-bottom: 50px;
+}
+
+.address-title {
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+
+.order-address p {
+  margin-bottom: 10px;
+}
+
+.order-address hr {
+height: 1px;
+background-color: #ccc;
+border: none;
+margin: 20px 0;
+}
+    
+    
+    
+    
+    
+    .button-container {
         display: flex;
         gap: 10px;
       }

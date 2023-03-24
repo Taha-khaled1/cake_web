@@ -33,16 +33,16 @@
                                 <div class="button-container">
 
 
-                                    <a href="{{route('admin.orders')}}">
+                                    <a href="{{ route('admin.orders') }}">
                                         <button class="button primary">الطلبات الجديده</button>
                                     </a>
-                                    <a href="{{route('orderss.list')}}">
+                                    <a href="{{ route('orderss.list') }}">
                                         <button class="button secondary">طلبات تم شحنها</button>
                                     </a>
-                                    <a href="{{route('sh.admin.orders')}}">
+                                    <a href="{{ route('sh.admin.orders') }}">
                                         <button class="button primary">الطلبات تم تسليمها</button>
                                     </a>
-                                    <a href="{{route('shs.admin.orders')}}">
+                                    <a href="{{ route('shs.admin.orders') }}">
                                         <button class="button tertiary">طلبات تم الغائها</button>
                                     </a>
 
@@ -76,8 +76,9 @@
                                                             <td>
                                                                 @if ($c->user->id)
                                                                     <a
-                                                                        href="{{ route('admin.user.profile', $c->user->id) }}"><i
-                                                                            class="icofont-eye  text-secondary font-20"></i>
+                                                                        href="{{ route('admin.user.profile', $c->user->id) }}">
+                                                                        <i>
+                                                                        </i>
                                                                         {{ $c->user->fname }}</a>
                                                                 @else
                                                                     {{ @$c->address->name }}
@@ -92,15 +93,15 @@
                                                                         data-bs-toggle="dropdown" aria-expanded="false">
                                                                         @if ($c->status == 1)
                                                                             <span class="badge bg-info">طلب جديد
-                                                                                @elseif($c->status == 2)
-                                                                                    <span class="badge bg-primary">تم
-                                                                                        الشحن</span>
-                                                                                @elseif($c->status == 3)
-                                                                                    <span class="badge bg-success">تم
-                                                                                        التسليم</span>
-                                                                                @else
-                                                                                    <span class="badge bg-danger">طلب
-                                                                                        ملغي</span>
+                                                                            @elseif($c->status == 2)
+                                                                                <span class="badge bg-primary">تم
+                                                                                    الشحن</span>
+                                                                            @elseif($c->status == 3)
+                                                                                <span class="badge bg-success">تم
+                                                                                    التسليم</span>
+                                                                            @else
+                                                                                <span class="badge bg-danger">طلب
+                                                                                    ملغي</span>
                                                                         @endif
                                                                     </button>
                                                                     <ul class="dropdown-menu"
@@ -207,11 +208,27 @@
 
 
                                                             <td>{{ $c->created_at->format('d/m/Y') }} </td>
-                                                            <td> <a href="{{ route('admin.order.profile', $c->id) }}"><i
-                                                                        class="icofont-edit text-secondary font-20"></i></a>
+                                                            <td> 
+
+
+
                                                                 <a href=" " class="deletem_b"
                                                                     deletem_b="{{ $c->id }}"> <i
                                                                         class="icofont-trash text-danger font-20"></i></a>
+
+
+
+                                                                        <a href="{{ route('admin.order.profile', $c->id) }}"><i
+                                                                            class="icofont-eye  text-secondary font-20"></i></a>
+
+                                                                {{-- @if ($c->user->id)
+                                                                    <a
+                                                                        href="{{ route('admin.user.profile', $c->user->id) }}"><i
+                                                                            class="icofont-eye  text-secondary font-20"></i>
+                                                                    </a>
+                                                                @endif --}}
+
+
                                                             </td>
                                                         </tr>
                                                     @endforeach
