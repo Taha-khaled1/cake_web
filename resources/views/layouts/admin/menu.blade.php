@@ -93,6 +93,7 @@
                       <ul class="sub-menu collapse" id="menu-pro">
                           <li><a class="ms-link" href="{{ route('report') }}"> التقارير الطلبات</a></li>
                           <li><a class="ms-link" href="{{ route('total') }}"> التقارير المدفوعات</a></li>
+                          <li><a class="ms-link" href="{{ route('reportmony') }}"> التقارير الماليه</a></li>
                       </ul>
                   </li>
                   {{-- @if (auth()->user()->is_admin == 1)

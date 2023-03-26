@@ -385,6 +385,9 @@ Route::prefix("admin")->group(function () {
 
 
  Route::get('orders/list' , [App\Http\Controllers\Admin\OrderController::class , 'orders_list'])->name('admin.orders');
+
+ Route::get('orders/report' , [App\Http\Controllers\Admin\OrderController::class , 'reportmony'])->name('reportmony');
+
  Route::get('order/profile/{id}' , [App\Http\Controllers\Admin\OrderController::class , 'order_profile'])->name('admin.order.profile');
  Route::get('order/shipping/{id}' , [App\Http\Controllers\Admin\OrderController::class , 'shipping'])->name('admin.order.shipping');
  Route::get('order/cancel/{id}' , [App\Http\Controllers\Admin\OrderController::class , 'cancel'])->name('admin.order.cancel');

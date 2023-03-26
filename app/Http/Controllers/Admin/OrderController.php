@@ -188,4 +188,36 @@ class OrderController extends Controller
             ]);
         } 
  }
+
+
+
+
+
+
+
+
+
+    public function reportmony()
+    {
+        $orders = Order::with('items.product')
+        ->where('status', 'completed')
+        ->orderBy('created_at', 'desc')
+        ->paginate(10);
+
+        return view('admin.orders.report', compact('orders')); 
+        
+        //  return $orders;
+    }
+
+
+
+
+
+
+
+
 }
+
+
+
+
