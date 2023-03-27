@@ -6,7 +6,8 @@
 
               <span>
                   <img src="{{ asset('storage/users/' . $header_logo) }}" alt="logo-small" width="150px" height="100px">
-              </span> </a>
+              </span>
+               </a>
           <!-- Menu: main ul -->
           <ul class="menu-list flex-grow-1 mt-3">
               <li><a class="m-link " href="{{ route('admin.home') }}"><i class="icofont-home fs-5"></i>
@@ -91,8 +92,8 @@
                               class="arrow icofont-rounded-down ms-auto text-end fs-5"></span></a>
                       <!-- Menu: Sub menu ul -->
                       <ul class="sub-menu collapse" id="menu-pro">
-                          <li><a class="ms-link" href="{{ route('report') }}"> التقارير الطلبات</a></li>
-                          <li><a class="ms-link" href="{{ route('total') }}"> التقارير المدفوعات</a></li>
+                          {{-- <li><a class="ms-link" href="{{ route('report') }}"> التقارير الطلبات</a></li>
+                          <li><a class="ms-link" href="{{ route('total') }}"> التقارير المدفوعات</a></li> --}}
                           <li><a class="ms-link" href="{{ route('reportmony') }}"> التقارير الماليه</a></li>
                       </ul>
                   </li>

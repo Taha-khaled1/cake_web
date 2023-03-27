@@ -227,6 +227,9 @@ th {
 
 
         </div>
+        <span>
+            <img src="{{ asset('storage/users/' . $header_logo) }}" alt="logo-small" width="180px" height="100px">
+        </span>
     </div>
     <script>
       window.print();
