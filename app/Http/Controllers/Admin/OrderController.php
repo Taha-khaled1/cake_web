@@ -233,7 +233,7 @@ class OrderController extends Controller
             
             $data[] = [
                 'order_number' => $order->number,
-                'user_name' => $order->user->name,
+                'user_name' => $order->user->fname??'مستخدم غير مسجل دخول',
                 'order_date' => $order->created_at,
                 'total_products' => $total_products,
                 'subtotal' => $subtotal,
