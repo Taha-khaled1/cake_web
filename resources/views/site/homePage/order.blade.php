@@ -3,7 +3,18 @@
 
 @section('content')
 <!-- start breadcrumb -->
-
+<style>
+    .btn-cart2{
+        text-decoration: none !important;
+    background-color: var(--second-color) !important;
+    color: #fff !important;
+    padding: 10px 25px !important;
+    transition: ease 0.5s !important;
+    display: block !important;
+    width: 200px !important;
+    margin-top: 15px !important;
+    }
+</style>
  
 <!-- end breadcrumb -->
 <section class="container py-3 section-continue" dir="{{LaravelLocalization::getCurrentLocaleDirection()}}" >
@@ -50,10 +61,10 @@
                             @enderror
                     <input type="text" name="street" class="form-control" id="street" placeholder="أدخل اسم الشارع" value="@if($add == 1) {{$address->street}} @else {{old('street')}} @endif" maxlength="100"   >
                   </div>
-                  <div class="mb-3">
+                  {{-- <div class="mb-3">
                     <label for="District"  > {{__('Blvd')}}</label>
                     <input type="text" name="Blve" class="form-control" id="أدخل رقم الجادة" value="@if($add == 1) {{$address->Blve}} @else {{old('Blve')}}  @endif">
-                  </div>
+                  </div> --}}
                   <div class="mb-3">
                     <label for="flat"  > {{__('Apartment/House')}}</label>
                     <input type="text" name="house" class="form-control" id="flat" placeholder="أدخل رقم/اسم الشقة/المنزل" value="@if($add == 1) {{$address->house}} @else {{old('house')}}  @endif" maxlength="100"  >
@@ -205,7 +216,7 @@
 
                   <hr class="my-4 hr-blue">
 
-                <input type="submit" class="btn btn-sqr" value=" {{__('Confirmation')}} ">
+                <input type="submit" class="btn btn-cart2" value=" {{__('Confirmation')}} ">
 
         </div> </form> 
     </div>

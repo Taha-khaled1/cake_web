@@ -56,15 +56,27 @@
         margin-top: 30px;
     }
 }
-
+.floating-action-button{
+    width: 50px;
+    height: 50px;
+    line-height: 55px;
+    bottom: 25px;
+    left: 25px;
+    z-index: 10000;
+}
 .myaccount-content {
     border: 1px solid #eeeeee;
     padding: 30px;
 }
-
+.nice-select{
+    width: 100% !important;
+}
 @media only screen and (max-width: 575.98px) {
     .myaccount-content {
         padding: 20px 15px;
+    }
+    .floating-action-button{
+        bottom: 75px;
     }
 }
 
@@ -279,19 +291,20 @@ header .fix-head ul li a:hover {
     height: 650px;
 
 }
-
+body{
+    overflow-x: hidden;
+}
 /****************************************************  end slider  **********************************************************/
 
 /****************************************************  start last-products  **********************************************************/
 .last-product h1 {
-    margin: 50px 0px 50px;
+    margin: 50px;
     color: var(--second-color);
     font-family: var(--main-font);
     font-weight: bold;
 }
 
 .last-product .products .product {
-    width: 350px;
     height: 350px;
     margin: 0 auto;
 }
@@ -300,6 +313,7 @@ header .fix-head ul li a:hover {
     .last-product .products .product {
         width: 280px;
     }
+
 }
 
 .last-product .products .product img {
@@ -383,7 +397,7 @@ header .fix-head ul li a:hover {
 /****************************************************  start services  **********************************************************/
 .services h2 {
     color: var(--second-color);
-    margin: 100px 0px 50px;
+    margin: 20px;
 }
 
 .services .service {
@@ -396,7 +410,7 @@ header .fix-head ul li a:hover {
 
 /****************************************************  start footer  **********************************************************/
 footer {
-    margin-top: 100px;
+    margin: 58px 0;
     background-color: var(--static-color);
     padding: 20px 0px 10px 0px;
     color: #000;
@@ -560,12 +574,12 @@ footer .line {
     }
 
     .hero-slider-item.bg-img {
-        height: 350px !important;
+        height: 250px !important;
     }
 
     .last-product h1 {
-        margin-top: 25px;
-        margin-bottom: 25px;
+        margin-top: 10px;
+        margin-bottom: 10px;
     }
 
     .top-head {
@@ -587,10 +601,7 @@ footer .line {
         margin-bottom: 10px;
     }
 
-    .services h2 {
-        margin-top: 50px;
-    }
-
+    
     .scroll-top {
         bottom: 70px !important;
     }

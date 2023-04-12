@@ -2,7 +2,13 @@
  @section('content')
  <!-- breadcrumb area start -->
  <link href="{{asset('/assets/new_assets/css/product-card.css?'. time() )}}" rel="stylesheet" />
-
+<style>
+@media(max-width:767px){
+    .details{
+        order:1
+    }
+}
+</style>
 {{--  <br>
  <div class="breadcrumb-area" >
             <div class="container">
@@ -33,8 +39,9 @@
   <div class="cards" dir="LaravelLocalization::getCurrentLocaleDirection()">
             <div class="container">
                 <div class="row">
+                    
                     <!-- product details wrapper start -->
-                    <div class="col-lg-6 col-md-6 col-sm-12 col-12">
+                    <div class="col-lg-6 col-md-6 col-sm-12 col-12 {{ LaravelLocalization::getCurrentLocaleDirection() == 'ltr' ? 'order-1' : '' }}">
                         <!-- product details inner end -->
                                     <div class="product-large-slider">
                                         <div class="big-img">
@@ -58,7 +65,7 @@
                                         @endforeach 
                                     </div>
                                 </div>
-                                <div class="details col-lg-6 col-md-6 col-sm-12 col-12 pt-5">                                      
+                        <div class="details col-lg-6 col-md-6 col-sm-12 col-12 pt-5">                                      
                                         <h2 >@if($product->name_en != null)
                                             @if( LaravelLocalization::getCurrentLocaleDirection() == 'rtl')
                                             {{$product->name}}
@@ -68,7 +75,7 @@
                                             {{$product->name}}
                                             @endif</h2>
                                         
-                                            <p class="price-regular"><sapn>{{$product->price}}</sapn> {{__('AED')}}</p>
+                                            <p class="price-regular"><span>{{$product->price}}</span> {{__('AED')}}</p>
                                         <p class="pro-desc">@if($product->description_en != null)
                                                 @if( LaravelLocalization::getCurrentLocaleDirection() == 'rtl')
                                                 {{$product->description}}
@@ -84,12 +91,9 @@
                                         <form action="{{ route('cart.store') }}" method="post" id="myform">
                                         @csrf
                                         <input type="hidden" name="product_id" value="{{ $product->id }}">
-                                        <h5 class="option-title">{{__('qty')}} : </h5>
+                                        <h5 class="option-title">{{__('Quantity')}} : </h5>
                                         <div class="d-flex gap-3 size pro-qty"><input type="text" name="quantity" value="1" style="width:25px;"></div>
-                                        <div class="action_link">
-                                        <a class="btn btn-cart2" href="#" onclick="document.getElementById('myform').submit()" > {{__('Add to cart')}}</a>
-
-                                        </div>
+                                        
                                         <div class="pro-size">
                                         @if($product->option->count() >= 1)
                                             <h6 class="option-title">{{__('size')}} :</h6>
@@ -104,7 +108,10 @@
                                             <textarea class="form-control" placeholder="{{__('Notes with the order')}}" name="notes" id="add-nots" cols="5" maxlength="300"  rows="3"></textarea>
                                             </div><br> 
                                         </form>
-                                        
+                                        <div class="action_link">
+                                            <a class="btn btn-cart2 p-0" href="#" onclick="document.getElementById('myform').submit()" > {{__('Add to cart')}}</a>
+    
+                                            </div>
                                         <div class="useful-links"> 
                                             </div>
                                             <br> 
@@ -118,9 +125,7 @@
                                             <a class="twitter" href="https://twitter.com/intent/tweet?url={{ url('/') }}/property/{{$product->id}}" target="_blank"><i class="fa fa-twitter"></i>tweet</a>
                                              
                                         </div>
-                        <!-- product details inner end -->
-                        <!-- product details reviews start -->
-                    </div>
+                        </div>
                     <!-- product details wrapper end -->
                 </div>
             </div>

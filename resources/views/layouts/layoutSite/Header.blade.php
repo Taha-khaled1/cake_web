@@ -1,4 +1,4 @@
-@if(Auth::user())@else
+
 <div class="top-head d-flex flex-wrap">
     <div class="dropdown">
         <button class="dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false" style="color: #975d8d;">
@@ -18,6 +18,7 @@
             <button type="submit" class=""><i class="pe-7s-search"></i></button>
         </form>
     </div>
+    @if(Auth::user())@else
     <div class="login me-4">
         <a href="{{route('login')}}" style="color:#975D8D" >
             {{ __('Sign In') }}
@@ -44,9 +45,9 @@
             </li>
         </ul> --}}
     </div>
-    
+    @endif
 </div>
-      @endif
+      
       {{-- dir="{{ LaravelLocalization::getCurrentLocaleDirection() }}" --}}
 
         <!-- main header start -->
@@ -222,7 +223,7 @@
                 </div>
                 <!-- mobile menu start  -->
                     <div class="fix-head px-2 position-fixed">
-                        <ul class="list-unstyled d-flex justify-content-center gap-3">
+                        <ul class="list-unstyled d-flex justify-content-center gap-3 {{ LaravelLocalization::getCurrentLocaleDirection() == 'ltr' ? 'flex-row-reverse' : '' }}">
                         <li class="text-center">
                                 <a href="{{route('viewHomePage')}}">
                                     <i class="fas fa-home"></i>

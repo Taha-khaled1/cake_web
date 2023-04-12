@@ -63,32 +63,33 @@
       @yield('content')   
       <div class="services">
             
-                    <h2 class="text-center">{{ __('Our services') }}</h2>
-                    <div class="d-flex justify-content-center gap-3 flex-wrap">
-                        <div class="service text-center">
-                            <i class="far fa-credit-card fs-3"></i>
-                            <h3 class="text-center">{{__('Delivery Service')}}</h3>
-                            <p>{{__('All orders will be delivered as soon as possible')}}</p>
-                        </div>
-                        <div class="service text-center">
-                            <i class="fas fa-user-friends fs-3"></i>
-                            <h3 class="text-center">{{__('Customers service')}}</h3>
-                            <p>{{__('We receive your inquiries and comments via WhatsApp')}}</p>
-                        </div>
-                        <div class="service text-center">
-                            <i class="far fa-heart fs-3"></i>
-                            <h3 class="text-center">{{__('The quality')}}</h3>
-                            <p>{{__('We have many different products')}}</p>
-                        </div>
-                        <div class="service text-center">
-                            <i class="far fa-credit-card fs-3"></i>
-                            <h3 class="text-center">{{__('Payment service is safe')}}</h3>
-                            <p>{{__('Paying online is very safe')}}<span>100%</span></p>
-                        </div>
-                    </div>
+            <h2 class="text-center">{{ __('Our services') }}</h2>
+            <div class="row">
+                <div class="service text-center col-lg-3 col-6">
+                    <i class="far fa-credit-card fs-3"></i>
+                    <h3 class="text-center">{{__('Delivery Service')}}</h3>
+                    <p>{{__('All orders will be delivered as soon as possible')}}</p>
+                </div>
+                <div class="service text-center col-lg-3 col-6">
+                    <i class="fas fa-user-friends fs-3"></i>
+                    <h3 class="text-center">{{__('Customers service')}}</h3>
+                    <p>{{__('We receive your inquiries and comments via WhatsApp')}}</p>
+                </div>
+                <div class="service text-center col-lg-3 col-6">
+                    <i class="far fa-heart fs-3"></i>
+                    <h3 class="text-center">{{__('The quality')}}</h3>
+                    <p>{{__('We have many different products')}}</p>
+                </div>
+                <div class="service text-center col-lg-3 col-6">
+                    <i class="far fa-credit-card fs-3"></i>
+                    <h3 class="text-center">{{__('Payment service is safe')}}</h3>
+                    <p>{{__('Paying online is very safe')}}<span>100%</span></p>
+                </div>
+            </div>
                 
         </div>
     </main>
+    <a href=""><div class="floating-action-button bg-success d-inline-block text-center rounded-circle position-fixed"><i class="fa fa-whatsapp text-light fs-3"></i></div></a>
   @include('layouts.layoutSite.Footer')
   <!--Start of Tawk.to Script-->
  

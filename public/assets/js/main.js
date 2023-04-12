@@ -345,7 +345,7 @@
 			breakpoint: 768,
 			settings: {
 				arrows: false,
-				slidesToShow: 1
+				slidesToShow: 2
 			}
 		}]
 	});

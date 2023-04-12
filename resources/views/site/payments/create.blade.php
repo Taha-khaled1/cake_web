@@ -1,6 +1,18 @@
 @extends('layouts.layoutSite.SitePage')
 @section('content')
  
+<style>
+    .btn-cart2{
+        text-decoration: none !important;
+    background-color: var(--second-color) !important;
+    color: #fff !important;
+    padding: 10px 25px !important;
+    transition: ease 0.5s !important;
+    display: block !important;
+    width: 200px !important;
+    margin-top: 15px !important;
+    }
+</style>
  
 <!-- breadcrumb area start -->
 {{-- <br>
@@ -31,7 +43,7 @@
 
                     <form action="" method="post" id="payment-form">
                         <div id="payment-element"></div>
-                        <br><button type="submit" id="submit" class="btn btn-sqr" >
+                        <br><button type="submit" id="submit" class="btn btn-cart2" >
                             <span id="button-text">{{__('Pay now')}}</span>
                             <span id="spinner" style="display: none;">Processing...</span>
                         </button>  

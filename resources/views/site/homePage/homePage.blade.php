@@ -178,7 +178,7 @@
                     <div class="col-12">
                         <div class="blog-carousel-active slick-row-10 slick-arrow-style">
                         @foreach($categores as $ca)
-                        @if($ca->img)
+                        {{-- @if($ca->img) --}}
                             <!-- blog post item start -->
                             <div class="blog-post-item">
                                 <figure class="blog-thumb">
@@ -200,7 +200,7 @@
                                 </div>
                             </div>
                             <!-- blog post item end -->
-                            @endif
+                            {{-- @endif --}}
                             @endforeach
                          </div>
                     </div>
