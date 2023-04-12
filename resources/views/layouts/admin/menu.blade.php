@@ -140,7 +140,7 @@
 
 
 
-              @if (Auth::user()->id == 1)
+              @if (auth()->user()->is_admin == 1)
                   <li class="collapsed">
                       <a class="m-link" data-bs-toggle="collapse" data-bs-target="#customers-info2" href="#">
                           <i class="icofont-funky-man fs-5"></i> <span>المشرفين</span> <span
@@ -152,9 +152,9 @@
                       <ul class="sub-menu collapse" id="customers-info2">
                           <li><a class="ms-link" href="{{ route('admin.admin.add') }}">اضف مشرف</a></li>
                       </ul>
-                      <ul class="sub-menu collapse" id="customers-info2">
+                      {{-- <ul class="sub-menu collapse" id="customers-info2">
                           <li><a class="ms-link" href="/admin/admin/profile/1">المشرف الرئيسي</a></li>
-                      </ul>
+                      </ul> --}}
                   </li>
               @endif
 

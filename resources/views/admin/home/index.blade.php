@@ -6,7 +6,7 @@
                                             <div class="card">
                                                 <div class="card-body py-xl-4 py-3 d-flex flex-wrap align-items-center justify-content-between">
                                                     <div class="left-info">
-                                                        <span class="text-muted">المستخدمين</span>
+                                                        <span class="text-muted"></span>
                                                         <div><span class="fs-6 fw-bold me-2">{{$users}}</span></div>
                                                     </div>
                                                     <div class="right-icon">

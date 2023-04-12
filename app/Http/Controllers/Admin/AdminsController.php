@@ -19,7 +19,8 @@ class AdminsController extends Controller
    
     public function admins_list()
     {
-        $admins = User::where('is_admin', 1)->get();
+        $admins = User::whereIn('is_admin', [1, 2, 3])->get();
+ 
         return view('admin.admins.index')->with('admins', $admins);
     }
     

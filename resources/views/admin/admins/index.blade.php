@@ -27,6 +27,7 @@
                                         <th>#</th>
                                         <th>الاسم</th>
                                         <th>الايميل</th>
+                                        <th>الصلاحيه</th>
                                         <th>العمليات</th>
                                         
                                     </tr>
@@ -38,6 +39,55 @@
                                         <td>{{$loop->iteration}} </td>
                                         <td>{{$user->fname}} {{$user->lname}} </td>
                                         <td>{{$user->email}} </td>
+                                        
+
+                                        <td>
+                                            <div class="dropdown">
+                                                <button class="btn btn-secondary dropdown-toggle"
+                                                    type="button" id="statusDropdown"
+                                                    data-bs-toggle="dropdown" aria-expanded="false">
+                                                    @if ($user->is_admin == 1)
+                                                        <span class="badge bg-info">مالك (ادمن)
+                                                            @elseif($user->is_admin == 2)
+                                                                <span class="badge bg-primary">محاسب</span>
+                                                            @elseif($user->is_admin == 3)
+                                                                <span class="badge bg-success">موظف (اضافة المنتجات وحذفها)</span>
+                                                            @else
+                                                                <span class="badge bg-danger">مستخدم</span>
+                                                    @endif
+                                                </button>
+                                                <ul class="dropdown-menu"
+                                                    aria-labelledby="statusDropdown">
+                                                    <li>
+                                                        <form method="POST"
+                                                            action="{{ route('update.userl', [$user->id, 1]) }}">
+                                                            @csrf <button type="submit"
+                                                                class="dropdown-item">مالك (ادمن)</button>
+                                                        </form>
+                                                    </li>
+                                                    <li>
+                                                        <form method="POST"
+                                                            action="{{ route('update.userl', [$user->id, 2]) }}">
+                                                            @csrf <button type="submit"
+                                                                class="dropdown-item">محاسب</button>
+                                                        </form>
+                                                    </li>
+                                                    <li>
+                                                        <form method="POST"
+                                                            action="{{ route('update.userl', [$user->id, 3]) }}">
+                                                            @csrf <button type="submit"
+                                                                class="dropdown-item">موظف</button></form>
+                                                    </li>
+                                                    <li>
+                                                        <form method="POST"
+                                                            action="{{ route('update.userl', [$user->id, 0]) }}">
+                                                            @csrf <button type="submit"
+                                                                class="dropdown-item">مستخدم</button>
+                                                        </form>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </td>
                                          <td>  <a href="{{ route('admin.admin.profile', $user->id)}}"><i class="icofont-edit  text-secondary font-20"></i></a>
                                         <a  href=" " class="deletem_b"  deletem_b="{{$user->id}}"> <i class="icofont-trash text-danger font-20"></i></a>
                                         </td>
