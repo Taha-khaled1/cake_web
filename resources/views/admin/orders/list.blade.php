@@ -69,169 +69,174 @@
                                                     </tr>
                                                 </thead>
                                                 <tbody>
+                                                    @if (count($orders) > 0)
                                                     @foreach ($orders as $c)
-                                                        <tr class="R_user{{ $c->id }}">
-                                                            <td>{{ $c->id }} </td>
-                                                            <td>{{ $c->total }}د.إ </td>
-                                                            <td>
-                                                                @if ($c->user->id)
-                                                                    <a
-                                                                        href="{{ route('admin.user.profile', $c->user->id) }}">
-                                                                        <i>
-                                                                        </i>
-                                                                        {{ $c->user->fname }}</a>
-                                                                @else
-                                                                    {{ @$c->address->name }}
-                                                                @endif
-                                                            </td>
+                                                    <tr class="R_user{{ $c->id }}">
+                                                        <td>{{ $c->id }} </td>
+                                                        <td>{{ $c->total }}د.إ </td>
+                                                        <td>
+                                                            @if ($c->user->id)
+                                                                <a
+                                                                    href="{{ route('admin.user.profile', $c->user->id) }}">
+                                                                    <i>
+                                                                    </i>
+                                                                    {{ $c->user->fname }}</a>
+                                                            @else
+                                                                {{ @$c->address->name }}
+                                                            @endif
+                                                        </td>
 
 
-                                                            <td>
-                                                                <div class="dropdown">
-                                                                    <button class="btn btn-secondary dropdown-toggle"
-                                                                        type="button" id="statusDropdown"
-                                                                        data-bs-toggle="dropdown" aria-expanded="false">
-                                                                        @if ($c->status == 1)
-                                                                            <span class="badge bg-info">طلب جديد
-                                                                            @elseif($c->status == 2)
-                                                                                <span class="badge bg-primary">تم
-                                                                                    الشحن</span>
-                                                                            @elseif($c->status == 3)
-                                                                                <span class="badge bg-success">تم
-                                                                                    التسليم</span>
-                                                                            @else
-                                                                                <span class="badge bg-danger">طلب
-                                                                                    ملغي</span>
-                                                                        @endif
-                                                                    </button>
-                                                                    <ul class="dropdown-menu"
-                                                                        aria-labelledby="statusDropdown">
-                                                                        <li>
-                                                                            <form method="POST"
-                                                                                action="{{ route('update.order', [$c->id, 1]) }}">
-                                                                                @csrf <button type="submit"
-                                                                                    class="dropdown-item">طلب جديد</button>
-                                                                            </form>
-                                                                        </li>
-                                                                        <li>
-                                                                            <form method="POST"
-                                                                                action="{{ route('update.order', [$c->id, 2]) }}">
-                                                                                @csrf <button type="submit"
-                                                                                    class="dropdown-item">تم الشحن</button>
-                                                                            </form>
-                                                                        </li>
-                                                                        <li>
-                                                                            <form method="POST"
-                                                                                action="{{ route('update.order', [$c->id, 3]) }}">
-                                                                                @csrf <button type="submit"
-                                                                                    class="dropdown-item">تم
-                                                                                    التسليم</button></form>
-                                                                        </li>
-                                                                        <li>
-                                                                            <form method="POST"
-                                                                                action="{{ route('update.order', [$c->id, 0]) }}">
-                                                                                @csrf <button type="submit"
-                                                                                    class="dropdown-item">طلب ملغي</button>
-                                                                            </form>
-                                                                        </li>
-                                                                    </ul>
-                                                                </div>
-                                                            </td>
-
-
-
-                                                            {{-- <td>@if ($c->status == 1) <span class="badge bg-info">طلب جديد</span>
-                                        @elseif($c->status == 2) <span class="badge bg-primary">تم الشحن</span>
-                                        @elseif($c->status == 3) <span class="badge bg-success">تم التسليم</span>
-                                        @else <span class="badge bg-danger">طلب ملغي</span>
-                                        @endif</td> --}}
-                                                            <td>{{ $c->items->count() }} </td>
-
-
-
-
-                                                            <td>
-                                                                <div class="dropdown">
-                                                                    <button class="btn btn-secondary dropdown-toggle"
-                                                                        type="button" id="statusDropdown"
-                                                                        data-bs-toggle="dropdown" aria-expanded="false">
-                                                                        @if ($c->payment_method == 'pending')
-                                                                            <span class="badge bg-info">في انتظار
-                                                                                الدفع</span>
-                                                                        @elseif($c->payment_method == 'completed')
-                                                                            <span class="badge bg-primary">تم الدفع</span>
-                                                                        @elseif($c->payment_method == 'failed')
-                                                                            <span class="badge bg-success">تم الغاء
-                                                                                الدفع</span>
+                                                        <td>
+                                                            <div class="dropdown">
+                                                                <button class="btn btn-secondary dropdown-toggle"
+                                                                    type="button" id="statusDropdown"
+                                                                    data-bs-toggle="dropdown" aria-expanded="false">
+                                                                    @if ($c->status == 1)
+                                                                        <span class="badge bg-info">طلب جديد
+                                                                        @elseif($c->status == 2)
+                                                                            <span class="badge bg-primary">تم
+                                                                                الشحن</span>
+                                                                        @elseif($c->status == 3)
+                                                                            <span class="badge bg-success">تم
+                                                                                التسليم</span>
                                                                         @else
-                                                                            <span class="badge bg-danger">الدفع عند
-                                                                                الاستلام</span>
-                                                                        @endif
-                                                                    </button>
-                                                                    <ul class="dropdown-menu"
-                                                                        aria-labelledby="statusDropdown">
-                                                                        <li>
-                                                                            <form method="POST"
-                                                                                action="{{ route('update.orderpay', [$c->id, 'pending']) }}">
-                                                                                @csrf <button type="submit"
-                                                                                    class="dropdown-item">في انتظار
-                                                                                    الدفع</button></form>
-                                                                        </li>
-                                                                        <li>
-                                                                            <form method="POST"
-                                                                                action="{{ route('update.orderpay', [$c->id, 'completed']) }}">
-                                                                                @csrf <button type="submit"
-                                                                                    class="dropdown-item">تم الدفع</button>
-                                                                            </form>
-                                                                        </li>
-                                                                        <li>
-                                                                            <form method="POST"
-                                                                                action="{{ route('update.orderpay', [$c->id, 'failed']) }}">
-                                                                                @csrf <button type="submit"
-                                                                                    class="dropdown-item">تم الغاء
-                                                                                    الدفع</button></form>
-                                                                        </li>
-                                                                        <li>
-                                                                            <form method="POST"
-                                                                                action="{{ route('update.orderpay', [$c->id, 'cash']) }}">
-                                                                                @csrf <button type="submit"
-                                                                                    class="dropdown-item">الدفع عند
-                                                                                    الاستلام</button></form>
-                                                                        </li>
-                                                                    </ul>
-                                                                </div>
-                                                            </td>
+                                                                            <span class="badge bg-danger">طلب
+                                                                                ملغي</span>
+                                                                    @endif
+                                                                </button>
+                                                                <ul class="dropdown-menu"
+                                                                    aria-labelledby="statusDropdown">
+                                                                    <li>
+                                                                        <form method="POST"
+                                                                            action="{{ route('update.order', [$c->id, 1]) }}">
+                                                                            @csrf <button type="submit"
+                                                                                class="dropdown-item">طلب جديد</button>
+                                                                        </form>
+                                                                    </li>
+                                                                    <li>
+                                                                        <form method="POST"
+                                                                            action="{{ route('update.order', [$c->id, 2]) }}">
+                                                                            @csrf <button type="submit"
+                                                                                class="dropdown-item">تم الشحن</button>
+                                                                        </form>
+                                                                    </li>
+                                                                    <li>
+                                                                        <form method="POST"
+                                                                            action="{{ route('update.order', [$c->id, 3]) }}">
+                                                                            @csrf <button type="submit"
+                                                                                class="dropdown-item">تم
+                                                                                التسليم</button></form>
+                                                                    </li>
+                                                                    <li>
+                                                                        <form method="POST"
+                                                                            action="{{ route('update.order', [$c->id, 0]) }}">
+                                                                            @csrf <button type="submit"
+                                                                                class="dropdown-item">طلب ملغي</button>
+                                                                        </form>
+                                                                    </li>
+                                                                </ul>
+                                                            </div>
+                                                        </td>
+
+
+
+                                                        {{-- <td>@if ($c->status == 1) <span class="badge bg-info">طلب جديد</span>
+                                    @elseif($c->status == 2) <span class="badge bg-primary">تم الشحن</span>
+                                    @elseif($c->status == 3) <span class="badge bg-success">تم التسليم</span>
+                                    @else <span class="badge bg-danger">طلب ملغي</span>
+                                    @endif</td> --}}
+                                                        <td>{{ $c->items->count() }} </td>
+
+
+
+
+                                                        <td>
+                                                            <div class="dropdown">
+                                                                <button class="btn btn-secondary dropdown-toggle"
+                                                                    type="button" id="statusDropdown"
+                                                                    data-bs-toggle="dropdown" aria-expanded="false">
+                                                                    @if ($c->payment_method == 'pending')
+                                                                        <span class="badge bg-info">في انتظار
+                                                                            الدفع</span>
+                                                                    @elseif($c->payment_method == 'completed')
+                                                                        <span class="badge bg-primary">تم الدفع</span>
+                                                                    @elseif($c->payment_method == 'failed')
+                                                                        <span class="badge bg-success">تم الغاء
+                                                                            الدفع</span>
+                                                                    @else
+                                                                        <span class="badge bg-danger">الدفع عند
+                                                                            الاستلام</span>
+                                                                    @endif
+                                                                </button>
+                                                                <ul class="dropdown-menu"
+                                                                    aria-labelledby="statusDropdown">
+                                                                    <li>
+                                                                        <form method="POST"
+                                                                            action="{{ route('update.orderpay', [$c->id, 'pending']) }}">
+                                                                            @csrf <button type="submit"
+                                                                                class="dropdown-item">في انتظار
+                                                                                الدفع</button></form>
+                                                                    </li>
+                                                                    <li>
+                                                                        <form method="POST"
+                                                                            action="{{ route('update.orderpay', [$c->id, 'completed']) }}">
+                                                                            @csrf <button type="submit"
+                                                                                class="dropdown-item">تم الدفع</button>
+                                                                        </form>
+                                                                    </li>
+                                                                    <li>
+                                                                        <form method="POST"
+                                                                            action="{{ route('update.orderpay', [$c->id, 'failed']) }}">
+                                                                            @csrf <button type="submit"
+                                                                                class="dropdown-item">تم الغاء
+                                                                                الدفع</button></form>
+                                                                    </li>
+                                                                    <li>
+                                                                        <form method="POST"
+                                                                            action="{{ route('update.orderpay', [$c->id, 'cash']) }}">
+                                                                            @csrf <button type="submit"
+                                                                                class="dropdown-item">الدفع عند
+                                                                                الاستلام</button></form>
+                                                                    </li>
+                                                                </ul>
+                                                            </div>
+                                                        </td>
 
 
 
 
 
 
-                                                            <td>{{ $c->created_at->format('d/m/Y') }} </td>
-                                                            <td> 
+                                                        <td>{{ $c->created_at->format('d/m/Y') }} </td>
+                                                        <td> 
 
 
 
-                                                                <a href=" " class="deletem_b"
-                                                                    deletem_b="{{ $c->id }}"> <i
-                                                                        class="icofont-trash text-danger font-20"></i></a>
+                                                            <a href=" " class="deletem_b"
+                                                                deletem_b="{{ $c->id }}"> <i
+                                                                    class="icofont-trash text-danger font-20"></i></a>
 
 
 
-                                                                        <a href="{{ route('admin.order.profile', $c->id) }}"><i
-                                                                            class="icofont-eye  text-secondary font-20"></i></a>
+                                                                    <a href="{{ route('admin.order.profile', $c->id) }}"><i
+                                                                        class="icofont-eye  text-secondary font-20"></i></a>
 
-                                                                {{-- @if ($c->user->id)
-                                                                    <a
-                                                                        href="{{ route('admin.user.profile', $c->user->id) }}"><i
-                                                                            class="icofont-eye  text-secondary font-20"></i>
-                                                                    </a>
-                                                                @endif --}}
+                                                            {{-- @if ($c->user->id)
+                                                                <a
+                                                                    href="{{ route('admin.user.profile', $c->user->id) }}"><i
+                                                                        class="icofont-eye  text-secondary font-20"></i>
+                                                                </a>
+                                                            @endif --}}
 
 
-                                                            </td>
-                                                        </tr>
-                                                    @endforeach
+                                                        </td>
+                                                    </tr>
+                                                @endforeach
+                                                    @else
+                                                        <p>لا يوجد بيانات</p>
+                                                    @endif
+                                                   
                                                 </tbody>
                                             </table>
                                         </div>
@@ -262,7 +267,7 @@
         function updateAction() {
             var form = document.getElementById("payment-form");
             var selectedValue = document.querySelector('select[name="status"]').value;
-            form.action = "{{ route('update.orderpay', [$c->id, '']) }}/" + selectedValue;
+            form.action = "{{ route('update.orderpay', [$c->id??0, '']) }}/" + selectedValue;
             form.submit();
         }
     </script>

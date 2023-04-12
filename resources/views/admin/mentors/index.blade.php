@@ -46,6 +46,15 @@
 
 
 
+
+                                        <td>@if($user->city){{$user->city->name}}@endif </td>
+
+
+
+
+
+
+
                                         <td>
                                             <div class="dropdown">
                                                 <button class="btn btn-secondary dropdown-toggle"
@@ -95,9 +104,6 @@
                                         </td>
 
 
-
-
-                                        <td>@if($user->city){{$user->city->name}}@endif </td>
                                         <td>  <a href="{{ route('admin.user.profile', $user->id)}}"><i class="icofont-edit  text-secondary font-20"></i></a>
                                         <a  href=" " class="deletem_b" onclick=" return confirm( `  Are you sure? ` )" deletem_b="{{$user->id}}"> <i class="icofont-trash text-danger font-20"></i></a>
                                         </td>
