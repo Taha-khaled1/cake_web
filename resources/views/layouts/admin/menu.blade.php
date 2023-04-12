@@ -37,7 +37,7 @@
                       </ul>
                   </li>
               @endif
-              @if (auth()->user()->is_admin == 1 || auth()->user()->is_admin == 2)
+              {{-- @if (auth()->user()->is_admin == 1 || auth()->user()->is_admin == 2) --}}
                   <li class="collapsed">
                       <a class="m-link" data-bs-toggle="collapse" data-bs-target="#menu-order" href="#">
                           <i class="icofont-notepad fs-5"></i> <span>الطلبات</span> <span
@@ -69,7 +69,7 @@
                       </ul>
 
                   </li>
-              @endif
+              {{-- @endif --}}
               @if (auth()->user()->is_admin == 1 || auth()->user()->is_admin == 3)
               <li class="collapsed">
                   <a class="m-link" data-bs-toggle="collapse" data-bs-target="#menu-productf" href="#">
@@ -133,10 +133,10 @@
                       </ul>
                   </li>
               @endif
-              @if (auth()->user()->is_admin == 1)
+              {{-- @if (auth()->user()->is_admin == 1)
                   <li><a class="m-link" href="{{ route('payments.index') }}"><i class="icofont-bill-alt fs-5"></i>
                           <span> عمليات الدفع </span></a></li>
-              @endif
+              @endif --}}
 
 
 

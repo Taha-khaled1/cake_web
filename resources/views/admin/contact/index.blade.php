@@ -48,9 +48,15 @@
                                         <td>@if($c->type){{$c->type->name}}@endif </td>
                                         <td>{{$c->phone}} </td>
                                         <td>{{$c->message}} </td>
-                                        <td>
-                                         <a  href=" " class="deletem_b" onclick=" return confirm( `  Are you sure? ` )" deletem_b="{{$c->id}}"><i class=" las la-trash text-danger font-20"></i></a>
+
+
+                                        <td> 
+                                            <a onclick=" return confirm( `  Are you sure? ` )" deletem_b="{{$c->id}}" href=" " class="deletem_b"
+                                                deletem_b="{{ $c->id }}"> <i
+                                                    class="icofont-trash text-danger font-20"></i></a>
                                         </td>
+
+                                        
                                         </tr>
                                         @endforeach
                                     </tbody>
