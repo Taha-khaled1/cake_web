@@ -30,13 +30,13 @@
 
                             <div class="card-body">
 
-                          
+
 
 
                                 <div class="tab-content">
                                     <div class="tab-pane p-3 active" id="Post" role="tabpanel">
                                         <div class="table-responsive">
-                                       
+
                                             {{-- <table>
                                                 <head>
                                                     <tr>
@@ -52,7 +52,7 @@
                                                     </tr>
                                                 </thead>
                                                 <tbody>
-                                                    @foreach($data as $row)
+                                                    @foreach ($data as $row)
                                                         <tr>
                                                             <td>{{ $row['order_number'] }}</td>
                                                             <td>{{ $row['order_date'] }}</td>
@@ -67,32 +67,37 @@
                                                     @endforeach
                                                 </tbody>
                                             </table> --}}
-   
+                                            <form method="GET" action="{{ route('generateReport') }}">
+                                                <div class="row mb-3">
+                                                    <div class="col-md-3">
+                                                        <label for="start_date" class="form-label">من</label>
+                                                        <input type="date" name="start_date" id="start_date" class="form-control">
+                                                    </div>
+                                                    <div class="col-md-3">
+                                                        <label for="end_date" class="form-label">الي</label>
+                                                        <input type="date" name="end_date" id="end_date" class="form-control">
+                                                    </div>
+                                                    <div class="col-md-3">
+                                                        <button type="submit" class="btn btn-primary">تصفية البيانات</button>
+                                                    </div>
+                                                </div>
+                                            </form>
+                                            
                                             <table id="myDataTable" class="table table-hover align-middle mb-0"
-                                            style="width:90%;">
-                                            <thead>
-                                                <th>معرف الطلب</th>
-                                                
-                                                <th>التاريخ</th>
-
-                                                <th>اسم المشتري</th>
-                                
-                                                <th>عدد المنجات</th>
-                                                <th>المجموع الفرعي</th>
-
-                                                <th>شحن</th>
-                                                <th>ضريبة</th>
-                                                <th>تخفيض</th>
-
-                                                <th>المجموع</th>
-
-
-
-
-
-                                            </thead>
-                                            <tbody>
-                                                @foreach($data as $row)
+                                                style="width:90%;">
+                                                <thead>
+                                                    <th>معرف الطلب</th>
+                                                    <th>التاريخ</th>
+                                                    <th>اسم المشتري</th>
+                                                    <th>عدد المنجات</th>
+                                                    <th>المجموع الفرعي</th>
+                                                    <th>شحن</th>
+                                                    <th>ضريبة</th>
+                                                    <th>تخفيض</th>
+                                                    <th>المجموع</th>
+                                                </thead>
+                                                <tbody>
+                                                    @foreach ($data as $row)
                                                         <tr>
                                                             <td>{{ $row['order_number'] }}</td>
                                                             <td>{{ $row['order_date'] }}</td>
@@ -105,12 +110,12 @@
                                                             <td>{{ $row['total'] }}</td>
                                                         </tr>
                                                     @endforeach
-                                           
-                                            </tbody>
-                                        </table>
-                                       
-                                       
-                                       
+
+                                                </tbody>
+                                            </table>
+
+
+
                                             {{-- <table id="myDataTable" class="table table-hover align-middle mb-0"
                                                 style="width:90%;">
                                                 <thead>
@@ -151,7 +156,7 @@
                     </div>
                 </div> <!-- end col -->
             </div> <!-- end row -->
-      
+
 
         </div><!-- container -->
 

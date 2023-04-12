@@ -215,7 +215,22 @@ class OrderController extends Controller
 
     public function generateReport(Request $request)
     {
-        $orders = Order::with('items.product', 'user')->get();
+        // $orders = Order::with('items.product', 'user')->get();
+
+        if ($request->has('start_date') && $request->has('end_date')) {
+            $startDate = $request->input('start_date');
+            $endDate = $request->input('end_date');
+            
+            // Retrieve orders within date range
+            $orders = Order::with(['items.product', 'user'])
+                            ->whereBetween('created_at', [$startDate, $endDate])
+                            ->get();
+        } else {
+            // Retrieve all orders
+            $orders = Order::with(['items.product', 'user'])->get();
+        }
+
+
         $data = [];
         foreach ($orders as $order) {
             $subtotal = 0;
@@ -232,7 +247,7 @@ class OrderController extends Controller
             $total = $subtotal + $shipping + $tax - $discount;
             
             $data[] = [
-                'order_number' => $order->number,
+                'order_number' => $order->id,
                 'user_name' => $order->user->fname??'مستخدم غير مسجل دخول',
                 'order_date' => $order->created_at,
                 'total_products' => $total_products,

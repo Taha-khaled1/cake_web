@@ -90,6 +90,64 @@
                                             </div>
                                         </div>
                                          
+
+
+
+
+                                        <div class="dropdown">
+                                            <button class="btn btn-secondary dropdown-toggle"
+                                                type="button" id="statusDropdown"
+                                                data-bs-toggle="dropdown" aria-expanded="false">
+                                                @if (1 == 1)
+                                                    <span class="badge bg-info">طلب جديد
+                                                   
+                                                @endif
+                                            </button>
+                                            <ul class="dropdown-menu"
+                                                aria-labelledby="statusDropdown">
+                                                <li>
+                                                    <form method="POST"
+                                                        action="#">
+                                                        @csrf <button type="submit"
+                                                            class="dropdown-item">طلب جديد</button>
+                                                    </form>
+                                                </li>
+                                                <li>
+                                                    <form method="POST"
+                                                        action="#">
+                                                        @csrf <button type="submit"
+                                                            class="dropdown-item">تم الشحن</button>
+                                                    </form>
+                                                </li>
+                                                <li>
+                                                    <form method="POST"
+                                                        action="#">
+                                                        @csrf <button type="submit"
+                                                            class="dropdown-item">تم
+                                                            التسليم</button></form>
+                                                </li>
+                                                <li>
+                                                    <form method="POST"
+                                                        action="#">
+                                                        @csrf 
+                                                        <button type="submit"
+                                                            class="dropdown-item">طلب ملغي</button>
+                                                    </form>
+                                                </li>
+                                            </ul>
+                                        </div>
+
+
+
+
+
+
+
+
+
+
+
+
                                         </div><!--end row-->
                                         <div class="form-group mb-3 row">
                                         <div class="col-lg-9 col-xl-8 offset-lg-3">
