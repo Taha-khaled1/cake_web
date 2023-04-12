@@ -36,82 +36,7 @@
                                 <div class="tab-content">
                                     <div class="tab-pane p-3 active" id="Post" role="tabpanel">
                                         <div class="table-responsive">
-                                       
-                                            {{-- <table>
-                                                <head>
-                                                    <tr>
-                                                        <th>Order Number</th>
-                                                        <th>Order Date</th>
-                                                        <th>Person Name</th>
-                                                        <th>Number of Products</th>
-                                                        <th>Subtotal</th>
-                                                        <th>Shipping</th>
-                                                        <th>Tax</th>
-                                                        <th>Discount</th>
-                                                        <th>Total</th>
-                                                    </tr>
-                                                </thead>
-                                                <tbody>
-                                                    @foreach($data as $row)
-                                                        <tr>
-                                                            <td>{{ $row['order_number'] }}</td>
-                                                            <td>{{ $row['order_date'] }}</td>
-                                                            <td>{{ $row['user_name'] }}</td>
-                                                            <td>{{ $row['total_products'] }}</td>
-                                                            <td>{{ $row['subtotal'] }}</td>
-                                                            <td>{{ $row['shipping'] }}</td>
-                                                            <td>{{ $row['tax'] }}</td>
-                                                            <td>{{ $row['discount'] }}</td>
-                                                            <td>{{ $row['total'] }}</td>
-                                                        </tr>
-                                                    @endforeach
-                                                </tbody>
-                                            </table> --}}
-   
                                             <table id="myDataTable" class="table table-hover align-middle mb-0"
-                                            style="width:90%;">
-                                            <thead>
-                                                <th>معرف الطلب</th>
-                                                
-                                                <th>التاريخ</th>
-
-                                                <th>اسم المشتري</th>
-                                
-                                                <th>عدد المنجات</th>
-                                                <th>المجموع الفرعي</th>
-
-                                                <th>شحن</th>
-                                                <th>ضريبة</th>
-                                                <th>تخفيض</th>
-
-                                                <th>المجموع</th>
-
-
-
-
-
-                                            </thead>
-                                            <tbody>
-                                                @foreach($data as $row)
-                                                        <tr>
-                                                            <td>{{ $row['order_number'] }}</td>
-                                                            <td>{{ $row['order_date'] }}</td>
-                                                            <td>{{ $row['user_name'] }}</td>
-                                                            <td>{{ $row['total_products'] }}</td>
-                                                            <td>{{ $row['subtotal'] }}</td>
-                                                            <td>{{ $row['shipping'] }}</td>
-                                                            <td>{{ $row['tax'] }}</td>
-                                                            <td>{{ $row['discount'] }}</td>
-                                                            <td>{{ $row['total'] }}</td>
-                                                        </tr>
-                                                    @endforeach
-                                           
-                                            </tbody>
-                                        </table>
-                                       
-                                       
-                                       
-                                            {{-- <table id="myDataTable" class="table table-hover align-middle mb-0"
                                                 style="width:90%;">
                                                 <thead>
                                                     <th>#</th>
@@ -141,7 +66,7 @@
                                                         @endforeach
                                                     @endforeach
                                                 </tbody>
-                                            </table> --}}
+                                            </table>
                                         </div>
                                     </div>
 

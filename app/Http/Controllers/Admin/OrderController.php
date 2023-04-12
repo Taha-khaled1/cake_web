@@ -213,8 +213,41 @@ class OrderController extends Controller
 
 
 
-
-
+    public function generateReport(Request $request)
+    {
+        $orders = Order::with('items.product', 'user')->get();
+        $data = [];
+        foreach ($orders as $order) {
+            $subtotal = 0;
+            $total_products = 0;
+            foreach ($order->items as $item) {
+                $subtotal += $item->price * $item->amount;
+                $total_products += $item->amount;
+            }
+            
+            $shipping = $order->shipping;
+            $tax = $order->tax;
+            $discount = $order->discount;
+            
+            $total = $subtotal + $shipping + $tax - $discount;
+            
+            $data[] = [
+                'order_number' => $order->number,
+                'user_name' => $order->user->name,
+                'order_date' => $order->created_at,
+                'total_products' => $total_products,
+                'subtotal' => $subtotal,
+                'shipping' => $shipping,
+                'tax' => $tax,
+                'discount' => $discount,
+                'total' => $total,
+            ];
+        }
+        
+        return view('admin.orders.report', [
+            'data' => $data,
+        ]);
+    }
 
 }
 
