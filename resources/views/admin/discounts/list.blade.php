@@ -95,11 +95,11 @@
 
                                         <div class="select-wrapper">
                                             <select>
-                                                <option value="" disabled selected>Select an option</option>
-                                                <option value="option1">Option 1</option>
-                                                <option value="option2">Option 2</option>
-                                                <option value="option3">Option 3</option>
-                                                <option value="option4">Option 4</option>
+                                                <option value="" disabled selected>اختار القسم</option>
+                                             @foreach ($catogerys as $item)
+                                             <option value="option1">{{$item->name}}</option>
+                                             @endforeach
+                                             
                                             </select>
                                             <div class="select-arrow"></div>
                                         </div>
