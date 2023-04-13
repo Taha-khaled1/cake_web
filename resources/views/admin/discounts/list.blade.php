@@ -98,42 +98,23 @@
                                             <button class="btn btn-secondary dropdown-toggle"
                                                 type="button" id="statusDropdown"
                                                 data-bs-toggle="dropdown" aria-expanded="false">
-                                                @if (1 == 1)
-                                                    <span class="badge bg-info">طلب جديد
-                                                   
-                                                @endif
+                                                <span class="badge bg-primary"
+                                                >
+                                            اختار قسم
+                                                </span>
                                             </button>
                                             <ul class="dropdown-menu"
                                                 aria-labelledby="statusDropdown">
-                                                <li>
-                                                    <form method="POST"
-                                                        action="#">
-                                                        @csrf <button type="submit"
-                                                            class="dropdown-item">طلب جديد</button>
-                                                    </form>
-                                                </li>
-                                                <li>
-                                                    <form method="POST"
-                                                        action="#">
-                                                        @csrf <button type="submit"
-                                                            class="dropdown-item">تم الشحن</button>
-                                                    </form>
-                                                </li>
-                                                <li>
-                                                    <form method="POST"
-                                                        action="#">
-                                                        @csrf <button type="submit"
-                                                            class="dropdown-item">تم
-                                                            التسليم</button></form>
-                                                </li>
-                                                <li>
-                                                    <form method="POST"
-                                                        action="#">
-                                                        @csrf 
-                                                        <button type="submit"
-                                                            class="dropdown-item">طلب ملغي</button>
-                                                    </form>
-                                                </li>
+                                            @foreach ($catogerys as $item)
+                                            <li>
+                                                {{-- <form method="POST"
+                                                    action="#">
+                                                    @csrf  --}}
+                                                    <button type="submit"
+                                                        class="dropdown-item">{{$item->name}}</button>
+                                                {{-- </form> --}}
+                                            </li>
+                                            @endforeach
                                             </ul>
                                         </div>
 
