@@ -89,7 +89,20 @@
                 
         </div>
     </main>
-    <a href=""><div class="floating-action-button bg-success d-inline-block text-center rounded-circle position-fixed"><i class="fa fa-whatsapp text-light fs-3"></i></div></a>
+
+    {{-- <a href="https://wa.me/971542005030" target="_blank"> --}}
+        <div class="floating-action-button bg-success d-inline-block text-center rounded-circle position-fixed dropdown-toggle" id="dropdownMenuButton255" data-bs-toggle="dropdown2" aria-expanded="false">
+            <i class="fa fa-whatsapp text-light fs-3 w-100 h-100" style="  cursor: pointer;   transform: translateY(-14px);"></i>
+            <div class="dropdown2">
+                <div class="dropdown-menu p-2" aria-labelledby="dropdownMenuButton255" style="bottom: 75px">
+                  <div class="form-group text-end">
+                    <textarea class="form-control w-100 mess" placeholder="رسالتك هنا"></textarea>
+                    <a href="https://wa.me/97154200030" target="_blank" class="bg-success rounded-circle text-light text-decoration-none send fs-6"><i class="fa fa-paper-plane"></i></a>
+                  </div>
+                </div>
+              </div>
+        </div>
+    {{-- </a> --}}
   @include('layouts.layoutSite.Footer')
   <!--Start of Tawk.to Script-->
  
@@ -136,6 +149,15 @@
 
   @stack('js')
   <script>
+
+    $(".mess").on("input",function(){
+        if($.trim($('.mess').val()).length>0){
+            $(".send").attr("href",`https://wa.me/97154200030?text=${$(".mess").val()}`)
+        }else{
+            $(".send").attr("href",`https://wa.me/97154200030`)
+        }
+    })
+  
 $('#subscriber_btn').on('click' , function (e) {
             
            // $(document).find('#errsu').remove();
@@ -172,8 +194,11 @@ $('#subscriber_btn').on('click' , function (e) {
         });
 </script>
 <script>
-        $('.dropdown-toggle').on("click", function () {
-            $('.dropdown-menu').toggle(500);
+        $('.top-head .dropdown-toggle').on("click", function () {
+            $('.top-head .dropdown-menu').toggle(500);
+        });
+        $('.floating-action-button .fa-whatsapp').on("click", function () {
+            $('.floating-action-button .dropdown-menu').toggle(500);
         });
         var value = parseInt(document.getElementById("weight").value)
         $(".dec.qtybtn").on("click",function(){
