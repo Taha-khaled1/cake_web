@@ -427,7 +427,7 @@ footer {
     padding: 20px 0px 10px 0px;
     color: #000;
 }
-@media(max-width:400px){
+@media(max-width:992px){
     footer{
         margin: 58px 0;
     }
@@ -553,7 +553,7 @@ footer .line {
     }
 
     footer img {
-        width: 100px;
+        width: 201px;
         height: 70px;
     }
 
