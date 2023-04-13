@@ -93,34 +93,16 @@
 
 
 
-
-                                        <div class="dropdown">
-                                            <button class="btn btn-secondary dropdown-toggle"
-                                                type="button" id="statusDropdown"
-                                                data-bs-toggle="dropdown" aria-expanded="false">
-                                                <span class="badge bg-primary"
-                                                >
-                                            اختار قسم
-                                                </span>
-                                            </button>
-                                            <ul class="dropdown-menu"
-                                                aria-labelledby="statusDropdown">
-                                            @foreach ($catogerys as $item)
-                                            <li>
-                                                {{-- <form method="POST"
-                                                    action="#">
-                                                    @csrf  --}}
-                                                    <button type="submit"
-                                                        class="dropdown-item">{{$item->name}}</button>
-                                                {{-- </form> --}}
-                                            </li>
-                                            @endforeach
-                                            </ul>
+                                        <div class="select-wrapper">
+                                            <select>
+                                                <option value="" disabled selected>Select an option</option>
+                                                <option value="option1">Option 1</option>
+                                                <option value="option2">Option 2</option>
+                                                <option value="option3">Option 3</option>
+                                                <option value="option4">Option 4</option>
+                                            </select>
+                                            <div class="select-arrow"></div>
                                         </div>
-
-
-
-
 
 
 

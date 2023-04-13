@@ -7,7 +7,93 @@
     <title>  A elle :: dashboard  </title>
     <link rel="icon" href="{{ url('/') }}/cp/favicon.ico" type="image/x-icon"> <!-- Favicon-->
     @notifyCss
-
+    <style>
+      body {
+        background-color: #f2f2f2;
+        font-family: Arial, sans-serif;
+      }
+      h1 {
+        color: #333;
+        text-align: center;
+        margin-top: 50px;
+        margin-bottom: 30px;
+      }
+      .select-wrapper {
+        position: relative;
+        display: inline-block;
+        vertical-align: middle;
+        margin: 0 auto;
+        max-width: 400px;
+      }
+      select {
+        width: 100%;
+        height: 40px;
+        padding: 8px 15px;
+        background-color: #fff;
+        border: none;
+        border-radius: 5px;
+        box-shadow: 0 0 0 2px #ddd;
+        appearance: none;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        font-size: 16px;
+        color: #333;
+        cursor: pointer;
+      }
+      select:focus {
+        outline: none;
+        box-shadow: 0 0 0 2px #007bff;
+      }
+      .select-arrow {
+        position: absolute;
+        top: 50%;
+        right: 15px;
+        transform: translateY(-50%);
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-width: 6px 6px 0 6px;
+        border-color: #333 transparent transparent transparent;
+        pointer-events: none;
+      }
+    </style>
+    <style>
+      body {
+        background-color: #f2f2f2;
+        font-family: Arial, sans-serif;
+      }
+      h1 {
+        color: #333;
+        text-align: center;
+        margin-top: 50px;
+        margin-bottom: 30px;
+      }
+      .checklist {
+        background-color: #fff;
+        border-radius: 5px;
+        padding: 20px;
+        margin: 0 auto;
+        max-width: 600px;
+      }
+      .checklist-item {
+        display: flex;
+        align-items: center;
+        margin-bottom: 10px;
+      }
+      .checklist-item input[type="checkbox"] {
+        margin-right: 10px;
+      }
+      .checklist-item label {
+        font-size: 18px;
+        color: #333;
+        flex-grow: 1;
+        cursor: pointer;
+        transition: color 0.2s ease-in-out;
+      }
+      .checklist-item label:hover {
+        color: #007bff;
+      }
+    </style>
     <!-- plugin css file  -->
     <style>
     
