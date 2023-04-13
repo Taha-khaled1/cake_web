@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
-
+use App\Models\Category;
 use App\Models\Discount;
 
 use Illuminate\Http\Request;
@@ -11,19 +11,20 @@ class DiscountController extends Controller
 {
     public function discounts_list()
     {
+        $cato=Category::all();
         $discounts = Discount::all();
         return view('admin.discounts.list', [
-            'discounts' => $discounts,       
+            'discounts' => $discounts,      'catogerys' => $cato,   
         ]);
     }
 
    
     public function discount_profile($id)
-    {
+    {$cato=Category::all();
         $discount = Discount::find($id);
         if($discount ){
             return view('admin.discounts.profile', [
-                'discount' => $discount,       
+                'discount' => $discount,   'catogerys' => $cato,        
             ]);   
          }
         return redirect()->back();
