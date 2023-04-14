@@ -72,7 +72,7 @@
                                  </div>
                                  <div class="tab-pane p-3" id="Settings" role="tabpanel">
                                         <div class="row">
-                                        <div class="card">
+                                        <div class="card p-3">
                                         <form name="" method="post" action="{{ route('admin.discount.save') }}"   enctype= "multipart/form-data" >
                                      @csrf
  
@@ -89,36 +89,31 @@
                                                 <input class="form-control" name="rate" type="number" id="example-text-input" maxlength="100">
                                             </div>
                                         </div>
-                                         
-
-
-
-                                        <div class="select-wrapper">
-                                            <select>
-                                                <option value="" disabled selected>اختار القسم</option>
-                                             @foreach ($catogerys as $item)
-                                             <option value="option1">{{$item->name}}</option>
-                                             @endforeach
-                                             
-                                            </select>
-                                            <div class="select-arrow"></div>
+                                        <div class="mb-4 row">
+                                            <label class="col-sm-1 col-form-label text-end">&nbsp;</label>
+                                            <div class="select-wrapper col-sm-6 me-auto">
+                                                <select>
+                                                    <option value="" disabled selected>اختار القسم</option>
+                                                 @foreach ($catogerys as $item)
+                                                 <option value="option1">{{$item->name}}</option>
+                                                 @endforeach
+                                                 
+                                                </select>
+                                                <div class="select-arrow"></div>
+                                            </div>
+                                            {{-- <label for="example-text-input" class="col-sm-1 col-form-label text-end">النسبة من مئة</label> --}}
+                                            
                                         </div>
-
-
-
-
-
-
-
-
                                         </div><!--end row-->
-                                        <div class="form-group mb-3 row">
-                                        <div class="col-lg-9 col-xl-8 offset-lg-3">
-                                            <button type="submit" class="btn btn-primary">
-                                                حفظ
-                                            </button>
-                                             
-                                        </div>
+                                        <div class="mb-3 row">
+                                            <label class="col-sm-1 col-form-label text-end">&nbsp;</label>
+                                            <div class="col-sm-6">
+                                                
+                                                <button type="submit" class="btn btn-primary">
+                                                    حفظ
+                                                </button>
+                                                
+                                            </div>
                                         </div>
                                     </form>
                                                 </div>

@@ -97,7 +97,7 @@
                 <div class="dropdown-menu p-2" aria-labelledby="dropdownMenuButton255" style="bottom: 75px">
                   <div class="form-group text-end">
                     <textarea class="form-control w-100 mess" placeholder="رسالتك هنا"></textarea>
-                    <a href="https://wa.me/97154200030" target="_blank" class="bg-success rounded-circle text-light text-decoration-none send fs-6"><i class="fa fa-paper-plane"></i></a>
+                    <a href="https://wa.me/971543014035" target="_blank" class="bg-success rounded-circle text-light text-decoration-none send fs-6"><i class="fa fa-paper-plane"></i></a>
                   </div>
                 </div>
               </div>
@@ -152,9 +152,9 @@
 
     $(".mess").on("input",function(){
         if($.trim($('.mess').val()).length>0){
-            $(".send").attr("href",`https://wa.me/97154200030?text=${$(".mess").val()}`)
+            $(".send").attr("href",`https://wa.me/971543014035?text=${$(".mess").val()}`)
         }else{
-            $(".send").attr("href",`https://wa.me/97154200030`)
+            $(".send").attr("href",`https://wa.me/971543014035`)
         }
     })
   

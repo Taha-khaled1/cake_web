@@ -78,6 +78,7 @@
                                                         <input type="date" name="end_date" id="end_date" class="form-control">
                                                     </div>
                                                     <div class="col-md-3">
+                                                        <label class="form-label d-block">&nbsp;</label>
                                                         <button type="submit" class="btn btn-primary">تصفية البيانات</button>
                                                     </div>
                                                 </div>
